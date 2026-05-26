@@ -1,0 +1,14 @@
+.backgroundImage {
+position: absolute;
+    right: -100px;
+    top: -50px;
+
+    width: 700px;
+    height: 700px;
+
+    background-image: url("../../images/background.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow-x: hidden;
+    opacity: 0.30;
+}

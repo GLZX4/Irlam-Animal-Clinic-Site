@@ -1,0 +1,25 @@
+.CTAphoneContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  gap: 10px;
+  background-color: #FC9335;
+
+    h2 {
+    font-size: 1rem;
+    max-width: 50%;
+    font-weight: 500;
+    }
+
+    a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+    }
+
+    a:hover {
+    text-decoration: underline;
+    }
+}
