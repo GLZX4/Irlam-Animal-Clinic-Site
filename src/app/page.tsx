@@ -7,6 +7,7 @@ import Testimonials from "@/components/testimonials/testimoninal";
 import Footer from "@/components/footer/footer";
 import styles from "../styles/page.module.scss"
 
+
 export default function Home() {
   return (
     <>

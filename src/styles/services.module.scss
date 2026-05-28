@@ -1,0 +1,76 @@
+.servicesPage {
+    padding: 0px 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pageHero {
+    text-align: center;
+    margin-bottom: 20px;
+    max-width: 900px;
+    margin: 0 auto 60px auto;
+
+    p {
+        color: #fc9335;
+        font-weight: 600;
+    }
+
+    h1 {
+        color: #347182;
+        font-size: 2.8rem;
+        margin: 10px 0;
+        line-height: 1.1;
+    }
+
+    span {
+        font-size: 1.1rem;
+        color: #555;
+    }
+}
+
+.serviceGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-height: 800px;
+    overflow-y: auto;
+    gap: 25px;
+}
+
+.CTAhelp {
+    margin-top: 80px;
+
+    padding: 30px 20px;
+
+    border-radius: 28px;
+
+    background: linear-gradient(
+        135deg,
+        #347182 0%,
+        #3f8194 100%
+    );
+
+    color: white;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    a {
+        color: #fff;
+    }
+}
+
+.disclaimer {
+    display: block;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+}
