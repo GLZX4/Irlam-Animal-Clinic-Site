@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { Stethoscope, Award, PoundSterling, Info, User } from "lucide-react";
+import { Stethoscope, Award, Info, User } from "lucide-react";
 import styles from "./header.module.scss";
 
 export default function Header() {
   return (
     <header className={styles.headerAlignment}>
-      <div  className={styles.logo} />
+  
+      <Link href="/" className={styles.logo}></Link>
 
       <nav className={styles.navBar}>
 

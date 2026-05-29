@@ -1,4 +1,5 @@
 import Header from "@/components/header/header";
+import Background from "@/components/background/background";
 import ServiceCard from "@/components/serviceCard/serviceCard";
 import { client } from "@/lib/sanity.client";
 import styles from "@/styles/services.module.scss";
@@ -33,7 +34,6 @@ export default async function ServicesPage() {
     return (
         <>
             <Header />
-
             <main className={styles.servicesPage}>
                 <section className={styles.pageHero}>
                     <p>Services & Pricing</p>

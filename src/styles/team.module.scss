@@ -1,0 +1,118 @@
+.pageHero {
+    max-width: 900px;
+    margin: 0px auto 50px auto;
+    padding: 0 25px;
+    text-align: center;
+
+    p {
+        color: #fc9335;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    h1 {
+        color: #347182;
+        font-size: clamp(2.4rem, 5vw, 4.5rem);
+        line-height: 1.08;
+        font-weight: 800;
+        margin-bottom: 22px;
+    }
+
+    span {
+        display: block;
+        max-width: 700px;
+        margin: 0 auto;
+        color: #555;
+        font-size: 1.15rem;
+        line-height: 1.7;
+    }
+}
+
+.teamGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 350px));
+    gap: 20px;
+    justify-content: center;
+
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.teamMember {
+    position: relative;
+
+    background: white;
+    padding: 15px;
+    max-width: 350px;
+
+    border-radius: 24px;
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,0.08);
+
+    transition: all 0.25s ease;
+}
+
+.memberName {
+    color: #347182;
+
+    font-size: 1.4rem;
+    font-weight: 700;
+
+    margin-top: 12px;
+}
+
+.memberRole {
+    display: inline-block;
+
+    background: rgba(252, 147, 53, 0.12);
+
+    color: #8d6039;
+
+    padding: 6px 12px;
+
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    margin-bottom: 16px;
+}
+
+.teamMember::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 80px;
+    height: 8px;
+
+    background: #fc9335;
+}
+
+.teamMember:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 18px 36px rgba(0,0,0,0.12);
+}
+
+.memberPhoto {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+    transition: all 0.25s ease;
+}
+
+.teamMember:hover .memberPhoto {
+    transform: scale(1.03);
+}
