@@ -4,6 +4,7 @@ import Hero from "@/components/hero/hero";
 import HeroImage from "@/components/hero/heroImage";
 import CTAphone from "@/components/CTA/CTAphone";
 import Testimonials from "@/components/testimonials/testimoninal";
+import WhyUs from "@/components/whyUs/whyUS";
 import Footer from "@/components/footer/footer";
 import styles from "../styles/page.module.scss"
 
@@ -25,6 +26,7 @@ export default function Home() {
             <HeroImage />
           </div>
         </section>
+        <WhyUs />
       </main>
       <Footer />
     </>

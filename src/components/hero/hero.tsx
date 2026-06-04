@@ -3,7 +3,8 @@ import styles from "./hero.module.scss";
 export default function Hero() {
     return (
         <div className={styles.heroText}>
-            <p className={`${styles.heroSubtitle} ${styles.noselect}`}>Compassionate <b>veterinary care, rehabilitation and hydrotherapy services</b> for pets across Irlam and the surrounding communities.</p>
+            <h1>Compassionate care for pets across Irlam</h1>
+            <p>Veterinary care, rehabilitation and hydrotherapy services from a friendly independent clinic.</p>           
         </div>
     );
 }

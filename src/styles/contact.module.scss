@@ -1,0 +1,249 @@
+.pageHero {
+    max-width: 900px;
+    margin: 70px auto 60px;
+    text-align: center;
+
+    p {
+        color: #fc9335;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    h1 {
+        color: #347182;
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        line-height: 1.1;
+        margin-bottom: 20px;
+    }
+
+    span {
+        color: #555;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        max-width: 700px;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.contactGrid {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.contactCard {
+    background: white;
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+
+    h2 {
+        color: #347182;
+        font-size: 1.35rem;
+        margin-bottom: 12px;
+    }
+
+    p {
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 8px;
+    }
+
+    a {
+        color: #fc9335;
+        font-weight: 700;
+        text-decoration: none;
+    }
+}
+
+.findUsSection {
+    max-width: 1200px;
+    margin: 80px auto;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.mapContainer {
+    min-height: 450px;
+    border-radius: 28px;
+    overflow: hidden;
+    background: #d9d9d9;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+
+    iframe {
+        width: 100%;
+        height: 450px;
+        border: 0;
+        display: block;
+    }
+}
+
+.locationInfo {
+    background: #f8fbfc;
+    border-radius: 28px;
+    padding: 35px;
+
+    p {
+        color: #fc9335;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    h2 {
+        color: #347182;
+        font-size: 2.4rem;
+        margin-bottom: 22px;
+    }
+
+    address {
+        font-style: normal;
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 25px;
+    }
+
+    ul {
+        list-style: none;
+        margin-bottom: 30px;
+        padding: 0;
+    }
+
+    li {
+        color: #555;
+        margin-bottom: 12px;
+        padding-left: 28px;
+        position: relative;
+    }
+
+    li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #fc9335;
+        font-weight: 800;
+    }
+}
+
+.mapButton {
+    display: inline-block;
+    background: #fc9335;
+    color: white;
+    padding: 14px 26px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.findUsSection {
+    max-width: 1200px;
+    margin: 80px auto;
+
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+
+    gap: 40px;
+    align-items: center;
+}
+
+.mapContainer {
+    min-height: 450px;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+.locationInfo {
+    p {
+        color: #fc9335;
+        font-weight: 700;
+    }
+
+    h2 {
+        color: #347182;
+        font-size: 2.5rem;
+        margin: 10px 0 25px 0;
+    }
+
+    address {
+        font-style: normal;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 25px;
+    }
+
+    ul {
+        margin-bottom: 30px;
+    }
+
+    li {
+        margin-bottom: 10px;
+        color: #555;
+    }
+}
+
+.emergencyNotice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1100px;
+    margin: 80px auto 0;
+    padding: 45px 35px;
+    border-radius: 28px;
+    background: #347182;
+    color: white;
+    text-align: center;
+
+    h2 {
+        font-size: 2.2rem;
+        margin-bottom: 14px;
+    }
+
+    p {
+        max-width: 700px;
+        margin: 0 auto 25px;
+        color: rgba(255,255,255,0.9);
+        line-height: 1.7;
+    }
+
+    a {
+        display: inline-block;
+        background: #fc9335;
+        color: white;
+        padding: 14px 28px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+    }
+}
+
+.emergencyLogo {
+    display: block;
+    width: 100px;
+    height: auto;
+    margin: 15px 0;
+}
+
+
+@media (max-width: 850px) {
+    .findUsSection {
+        grid-template-columns: 1fr;
+    }
+
+    .locationInfo h2 {
+        font-size: 2rem;
+    }
+
+    .mapContainer,
+    .mapContainer iframe {
+        height: 350px;
+        min-height: 350px;
+    }
+}
