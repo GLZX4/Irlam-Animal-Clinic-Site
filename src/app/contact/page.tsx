@@ -3,8 +3,23 @@ import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import Image from "next/image";
 import VetsNowLogo from "@/images/vets-now-logo.png";
+import { client } from "@/lib/sanity.client";
+
+async function getClinicSettings() {
+    return client.fetch(`
+        *[_type == "clinicSettings"][0]{
+            clinicPhone,
+            emergencyPhone,
+            emergencyProvider,
+            enquiriesEmail,
+            address,
+            openingHours
+        }
+    `);
+}
 
 export default async function Contact() {
+    const clinicSettings = await getClinicSettings();
   return (
     <div>
         <Header />
@@ -23,21 +38,23 @@ export default async function Contact() {
                     <div className={styles.contactCard}>
                         <h2>Call the Clinic</h2>
                         <p>For appointments, advice, or general enquiries.</p>
-                        <a href="tel:01617751322">0161 775 1322</a>
+                        <a href={`tel:${clinicSettings.clinicPhone}`}>{clinicSettings.clinicPhone}</a>
                     </div>
 
                     <div className={styles.contactCard}>
                         <h2>Out of Hours</h2>
                         <p>For urgent veterinary help when the clinic is closed.</p>
-                        <a href="tel:01612226101">0161 222 6101</a>
+                        <a href={`tel:${clinicSettings.emergencyPhone}`}>{clinicSettings.emergencyPhone}</a>
                     </div>
-
-
                     
-
                     <div className={styles.contactCard}>
                         <h2>Enquiries</h2>
-                        <p><a href="mailto:enquiries@irlamanimalclinic.co.uk">enquiries@irlamanimalclinic.co.uk</a></p>
+                        <p><a
+                            href={`mailto:${clinicSettings.enquiriesEmail}`}
+                            className={styles.emailLink}
+                        >
+                            {clinicSettings.enquiriesEmail}
+                        </a></p>
                     </div>
 
                     <div className={styles.contactCard}>
@@ -65,26 +82,20 @@ export default async function Contact() {
 
                     <div className={styles.locationInfo}>
                         <p>Find Us</p>
-
                         <h2>Visit Our Clinic</h2>
-
                         <address>
-                            Unit 5<br />
-                            Irlam Animal Clinic<br />
-                            Boundary Trading Park<br />
-                            Liverpool Road<br />
-                            Irlam<br />
-                            Manchester<br />
-                            M44 6FB
+                            {clinicSettings.address
+                                ?.split("\n")
+                                .map((line: string, index: number) => (
+                                    <div key={index}>{line}</div>
+                                ))}
                         </address>
-
                         <ul>
                             <li>Easy access from Liverpool Road</li>
                             <li>Parking available nearby</li>
                             <li>Clearly signposted entrance</li>
                             <li>Please keep dogs on leads and cats in carriers</li>
                         </ul>
-
                         <a
                             href="https://maps.google.com/?q=Unit+5+Irlam+Animal+Clinic+Boundary+Trading+Park+Liverpool+Road+Irlam+Manchester+M44+6FB"
                             target="_blank"
@@ -109,7 +120,7 @@ export default async function Contact() {
                         alt="Vets Now"
                         className={styles.emergencyLogo}
                     />
-                    <a href="tel:01612226101">Call Emergency Contact</a>
+                    <a href={`tel:${clinicSettings.emergencyPhone}`}>Call Emergency Contact</a>
                 </section>
             </main>
 

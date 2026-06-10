@@ -1,5 +1,5 @@
 .pageHero {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 70px auto 60px;
     text-align: center;
 
@@ -27,36 +27,54 @@
 }
 
 .contactGrid {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto 80px;
+    padding: 0 30px;
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
 }
 
 .contactCard {
     background: white;
-    border-radius: 22px;
-    padding: 28px;
+    border-radius: 24px;
+    padding: 32px;
+    min-height: 210px;
+
     box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 
     h2 {
         color: #347182;
         font-size: 1.35rem;
-        margin-bottom: 12px;
+        margin-bottom: 14px;
+        line-height: 1.3;
     }
 
     p {
         color: #555;
-        line-height: 1.6;
-        margin-bottom: 8px;
+        line-height: 1.65;
+        margin-bottom: 12px;
+        font-size: 0.98rem;
     }
 
     a {
         color: #fc9335;
         font-weight: 700;
         text-decoration: none;
+
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        line-height: 1.5;
     }
+}
+
+.emailLink {
+    font-size: 0.90rem;
 }
 
 .findUsSection {
@@ -139,55 +157,6 @@
     font-weight: 700;
 }
 
-.findUsSection {
-    max-width: 1200px;
-    margin: 80px auto;
-
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-
-    gap: 40px;
-    align-items: center;
-}
-
-.mapContainer {
-    min-height: 450px;
-
-    border-radius: 24px;
-
-    overflow: hidden;
-
-    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
-}
-
-.locationInfo {
-    p {
-        color: #fc9335;
-        font-weight: 700;
-    }
-
-    h2 {
-        color: #347182;
-        font-size: 2.5rem;
-        margin: 10px 0 25px 0;
-    }
-
-    address {
-        font-style: normal;
-        line-height: 1.8;
-        color: #555;
-        margin-bottom: 25px;
-    }
-
-    ul {
-        margin-bottom: 30px;
-    }
-
-    li {
-        margin-bottom: 10px;
-        color: #555;
-    }
-}
 
 .emergencyNotice {
     display: flex;
@@ -245,5 +214,25 @@
     .mapContainer iframe {
         height: 350px;
         min-height: 350px;
+    }
+}
+
+@media (max-width: 780px) {
+    .contactGrid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin: 0 auto 80px auto;
+    }
+
+    .contactCard {
+        min-height: auto;
+        min-width: 550px;
+    }
+    .emailLink {
+        font-size: 1.5rem;
+    }
+
+    .findUsSection {
+        margin: 30px;
     }
 }

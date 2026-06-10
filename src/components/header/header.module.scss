@@ -1,9 +1,8 @@
 .headerAlignment {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-  gap: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
 }
 
 .logo {
@@ -23,13 +22,15 @@
 }
 
 .navBar {
-  display: flex;
-  gap: 2rem;
-  padding: 10px 50px;
-  background: #FC9335;
-  max-width: 70%;
-  height: 45px;
-  border-radius: 5px 0 0 5px;
+    flex: 1;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    gap: clamp(0.5rem, 2vw, 2rem);
+    padding: 10px clamp(10px, 3vw, 50px);
+    background: #FC9335;
+    height: 45px;
+    border-radius: 5px 0 0 5px;
 }
 
 .navBarItem {
@@ -41,8 +42,12 @@
   color: #000;
 
     span {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 500;
+    }
+    svg {
+    width: clamp(14px, 2vw, 16px);
+    height: clamp(14px, 2vw, 16px);
     }
 }
 
@@ -54,4 +59,23 @@
   border-bottom: none;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .headerAlignment {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo {
+        width: 250px;
+        height: 90px;
+        flex: none;
+    }
+
+    .navBar {
+        max-width: 500px;
+        padding: 10px 50px;
+        height: 40px;
+    }
 }
