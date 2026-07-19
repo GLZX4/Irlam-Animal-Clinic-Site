@@ -1,13 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./header.module.scss";
 
 import { Menu, X, Users, PawPrint, CircleHelp, UserRound } from "lucide-react";
 
+
+
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth > 430) {
+                setMenuOpen(false);
+            }
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     return (
         <header className={styles.header}>

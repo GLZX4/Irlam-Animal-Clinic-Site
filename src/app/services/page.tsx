@@ -1,10 +1,8 @@
 import Header from "@/components/header/header";
-import Background from "@/components/background/background";
-import ServiceCard from "@/components/serviceCard/serviceCard";
-import { client } from "@/lib/sanity.client";
 import styles from "@/styles/services.module.scss";
-import { formatPrice } from "@/lib/formatPrice";
 import Footer from "@/components/footer/footer";
+import FilterableServices from "@/components/filterableServices/filterableServices";
+import { client } from "@/lib/sanity.client";
 
 type Service = {
     _id: string;
@@ -29,12 +27,15 @@ async function getServices(): Promise<Service[]> {
 }
 
 export default async function ServicesPage() {
+
     const services = await getServices();
 
     return (
         <>
             <Header />
+
             <main className={styles.servicesPage}>
+
                 <section className={styles.pageHero}>
                     <p>Services & Pricing</p>
                     <h1>Clear care options for your pet</h1>
@@ -43,29 +44,27 @@ export default async function ServicesPage() {
                     </span>
                 </section>
 
-                <section className={styles.serviceGrid}>
-                    {services.map((service) => (
-                        <ServiceCard
-                            key={service._id}
-                            title={service.title}
-                            description={service.description}
-                            price={formatPrice(service.price)}
-                            category={service.category}
-                            importantNote={service.importantNote}
-                        />
-                    ))}
-                </section>
+                <FilterableServices services={services} />
 
                 <div className={styles.CTAhelp}>
                     <h2>Need help choosing the right service?</h2>
-                    <p>Our friendly team is here to assist you in selecting the best care for your pet. Contact us today for personalized advice and support.</p>
-                    <a href="tel:0161 775 1322" className={styles.CTAbutton}>0161 775 1322</a>
+                    <p>
+                        Our friendly team is here to assist you in selecting the best care for your pet.
+                        Contact us today for personalized advice and support.
+                    </p>
+
+                    <a href="tel:0161 775 1322" className={styles.CTAbutton}>
+                        0161 775 1322
+                    </a>
                 </div>
 
                 <span className={styles.disclaimer}>
-                    Prices shown are a guide. Final costs may vary depending on your pet’s individual needs, treatment plan, weight, medication, or clinical advice.
+                    Prices shown are a guide. Final costs may vary depending on your pet’s individual needs,
+                    treatment plan, weight, medication, or clinical advice.
                 </span>
+
             </main>
+
             <Footer />
         </>
     );

@@ -1,5 +1,5 @@
 import { client } from "@/lib/sanity.client";
-import styles from "./Pricing.module.scss";
+import styles from "./pricing.module.scss";
 
 type PricingItem = {
   _id: string;

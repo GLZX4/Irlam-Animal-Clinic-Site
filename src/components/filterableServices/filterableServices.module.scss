@@ -1,0 +1,89 @@
+.filterBar {
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-bottom: 50px;
+
+    padding: 18px;
+
+    background: #f7d3ba;
+
+    border-radius: 28px;
+
+}
+
+
+.filterBar button {
+
+    border: none;
+
+    background: white;
+
+    color: #347182;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    padding: 12px 24px;
+
+    border-radius: 999px;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+}
+
+
+.filterBar button:hover {
+
+    background: #347182;
+
+    color: white;
+
+    transform: translateY(-2px);
+
+}
+
+
+.filterBar .active {
+
+    background: #347182;
+
+    color: white;
+
+    box-shadow: 0 8px 18px rgba(52,113,130,0.25);
+
+}
+
+@media(max-width:600px){
+
+    .filterBar {
+
+        justify-content:flex-start;
+
+        overflow-x:auto;
+
+        flex-wrap:nowrap;
+
+        padding:14px;
+
+        scrollbar-width:none;
+
+    }
+
+    .filterBar::-webkit-scrollbar {
+        display:none;
+    }
+
+
+    .filterBar button {
+
+        flex-shrink:0;
+
+    }
+
+}
