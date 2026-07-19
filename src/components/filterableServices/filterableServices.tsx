@@ -22,14 +22,18 @@ type Props = {
 export default function FilterableServices({ services }: Props) {
 
     const categories = [
-        "All",
-        ...new Set(services.map(service => service.category))
+        "All Services",
+        ...new Set(
+            services
+                .map(service => service.category)
+                .filter(Boolean)
+        )
     ];
 
-    const [selectedCategory, setSelectedCategory] = useState("All");
+    const [selectedCategory, setSelectedCategory] = useState("All Services");
 
     const filteredServices =
-        selectedCategory === "All"
+        selectedCategory === "All Services"
             ? services
             : services.filter(
                   service => service.category === selectedCategory
