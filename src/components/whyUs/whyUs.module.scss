@@ -68,12 +68,45 @@
     text-align: center;
 
     svg {
+        padding: 14px;
+        border-radius: 50%;
+        background: #fff3ea;
         color: #fc9335;
-        margin-bottom: 15px;
+
+        width: 64px;
+        height: 64px;
+
+        margin-bottom: 20px;
     }
 
     h3 {
         color: #347182;
         font-size: 1.2rem;
     }
+}
+
+@media (max-width: 1000px) {
+
+    .whyGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .whyChoose {
+        margin: 60px auto;
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+    }
+
+    .whyGrid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
 }
