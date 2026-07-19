@@ -42,9 +42,7 @@ export default function About() {
                         </p>
                     </div>
 
-                    <div className={styles.storyImage}>
-                        {/* Clinic photo here */}
-                    </div>
+                    <div className={styles.storyImage}></div>
                 </section>
 
                 <section className={styles.hydrotherapy}>
@@ -67,7 +65,7 @@ export default function About() {
                     </div>
 
                     <div className={styles.hydroImage}>
-                        {/* Hydrotherapy pool image */}
+                        <div className={styles.hydrotherapyPool}></div>
                     </div>
                 </section>
 

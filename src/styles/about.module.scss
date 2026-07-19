@@ -60,6 +60,24 @@
     box-shadow: 0 12px 32px rgba(0,0,0,0.08);
 }
 
+.storyImage {
+    width: 100%;
+    height: 100%;
+    border-radius: 28px;
+    background-image: url('../images/duckIMG.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hydrotherapyPool {
+    width: 100%;
+    height: 100%;
+    border-radius: 28px;
+    background-image: url('../images/hydrotherapyIMG.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
 .hydroContent {
     span {
         display: block;

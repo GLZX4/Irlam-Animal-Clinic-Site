@@ -1,35 +1,53 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
-import { Stethoscope, Award, Info, User } from "lucide-react";
 import styles from "./header.module.scss";
 
+import { Menu, X, Users, PawPrint, CircleHelp, UserRound } from "lucide-react";
+
 export default function Header() {
-  return (
-    <header className={styles.headerAlignment}>
-  
-      <Link href="/" className={styles.logo}></Link>
+    const [menuOpen, setMenuOpen] = useState(false);
 
-      <nav className={styles.navBar}>
+    return (
+        <header className={styles.header}>
 
-        <Link href="/team" className={styles.navBarItem}>
-          <span>Team</span>
-          <Award size={16} />
-        </Link>
+            <div className={styles.headerAlignment}>
 
-        <Link href="/services" className={styles.navBarItem}>
-            <span>Services</span>
-            <Stethoscope size={16} />
-        </Link>
+                <Link href="/" className={styles.logo} />
 
-        <Link href="/about" className={styles.navBarItem}>
-          <span>About</span>
-          <Info size={16} />
-        </Link>
+                <button
+                    className={styles.menuButton}
+                    onClick={() => setMenuOpen(!menuOpen)}
+                    aria-label="Toggle navigation"
+                >
+                    {menuOpen ? <X size={28}/> : <Menu size={28}/>}
+                </button>
 
-        <Link href="/contact" className={styles.navBarItem}>
-          <span>Contact</span>
-          <User size={16} />
-        </Link>
-      </nav>
-    </header>
-  );
+                <nav className={`${styles.navBar} ${menuOpen ? styles.open : ""}`}>
+                    <Link href="/team" className={styles.navBarItem}>
+                        <span>Team</span>
+                        <Users />
+                    </Link>
+
+                    <Link href="/services" className={styles.navBarItem}>
+                        <span>Services</span>
+                        <PawPrint />
+                    </Link>
+
+                    <Link href="/about" className={styles.navBarItem}>
+                        <span>About</span>
+                        <CircleHelp />
+                    </Link>
+
+                    <Link href="/contact" className={styles.navBarItem}>
+                        <span>Contact</span>
+                        <UserRound />
+                    </Link>
+                </nav>
+
+            </div>
+
+        </header>
+    );
 }
