@@ -36,6 +36,14 @@
     font-weight: 700;
 }
 
+.storySection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 80px auto;
+}
+
 .storyContent {
     margin: 0px 10px 60px 10px;
     h2 {

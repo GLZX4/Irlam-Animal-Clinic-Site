@@ -28,7 +28,7 @@ async function getServices(): Promise<Service[]> {
 
 export default async function ServicesPage() {
 
-    const services = await getServices();
+    const services = (await getServices()) || [];
 
     return (
         <>

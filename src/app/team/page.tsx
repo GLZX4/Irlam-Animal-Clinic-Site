@@ -3,6 +3,7 @@ import Footer from "@/components/footer/footer";
 import { client } from "@/lib/sanity.client";
 import { urlFor } from "@/lib/imageUrl";
 import styles from "@/styles/team.module.scss";
+import Image from "next/image";
 
 type TeamMember = {
     _id: string;
@@ -26,8 +27,8 @@ async function getTeamMembers(): Promise<TeamMember[]> {
 
 
 export default async function TeamPage() {
-    const teamMembers = await getTeamMembers();
-    console.log(teamMembers);
+    const teamMembers = (await getTeamMembers()) || [];
+
     return (
         <>
             <Header />
@@ -45,9 +46,11 @@ export default async function TeamPage() {
                     {teamMembers.map((member) => (
                         <div className={styles.teamMember} key={member._id}>
                             {member.photo && (
-                                <img
+                                <Image
                                     src={urlFor(member.photo).width(500).height(500).url()}
                                     alt={member.name}
+                                    width={500}
+                                    height={500}
                                     className={styles.memberPhoto}
                                 />
                             )}

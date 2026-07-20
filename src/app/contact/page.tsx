@@ -19,7 +19,7 @@ async function getClinicSettings() {
 }
 
 export default async function Contact() {
-    const clinicSettings = await getClinicSettings();
+    const clinicSettings = (await getClinicSettings()) || {};
   return (
     <div>
         <Header />
@@ -67,17 +67,17 @@ export default async function Contact() {
 
                 <section className={styles.findUsSection}>
                     <div className={styles.mapContainer}>
-                        {/* Google Maps Embed */}
-                                    <iframe
-                src="https://maps.google.com/maps?width=100%&amp;height=100%&amp;hl=en&amp;q=England, Unit 5, Irlam Animal Clinic, Boundary Trading Park, Liverpool Rd, Irlam, Manchester M44 6FB&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                width="600"
-                height="450"
-                frameBorder="0"
-                style={{ border: 0 }}
-                allowFullScreen={false}
-                aria-hidden="false"
-                tabIndex={0}
-            />
+                    <iframe
+                        title="Google Maps location of Irlam Animal Clinic"
+                        src="https://maps.google.com/maps?width=100%&amp;height=100%&amp;hl=en&amp;q=England, Unit 5, Irlam Animal Clinic, Boundary Trading Park, Liverpool Rd, Irlam, Manchester M44 6FB&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                        width="600"
+                        height="450"
+                        frameBorder="0"
+                        style={{ border: 0 }}
+                        allowFullScreen={false}
+                        aria-hidden="false"
+                        tabIndex={0}
+                    />
                     </div>
 
                     <div className={styles.locationInfo}>

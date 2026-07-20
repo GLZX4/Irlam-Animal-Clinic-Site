@@ -13,7 +13,7 @@ export default function Header() {
 
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth > 430) {
+            if (window.innerWidth > 445) {
                 setMenuOpen(false);
             }
         };
@@ -28,7 +28,7 @@ export default function Header() {
 
             <div className={styles.headerAlignment}>
 
-                <Link href="/" className={styles.logo} />
+                <Link href="/" className={styles.logo} aria-label="Irlam Animal Clinic home" />
 
                 <button
                     className={styles.menuButton}
