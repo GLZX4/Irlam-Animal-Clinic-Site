@@ -26,9 +26,11 @@
     display: flex;
     gap: 1rem;
     overflow-x: auto;
-    padding-bottom: 8px;
+    overflow-y: hidden;
 
-    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+
+    scroll-snap-type: x proximity;
 }
 
 .card {

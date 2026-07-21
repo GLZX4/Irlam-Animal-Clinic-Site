@@ -33,6 +33,13 @@
   width: 50%;
 }
 
+.mainContent,
+.testimonialSection,
+.CTAphone {
+  position: relative;
+  z-index: 1;
+}
+
 @media (max-width: 1024px){
       .mainContent {
         gap: 30px;
